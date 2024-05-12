@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/fonts/stylesheet.css">
 </head>
@@ -115,7 +118,7 @@
                         <img src="assets/images/hol-cart.png" alt="">
                     </div>
                     <div class="holiday-cart__img">
-                        <img src="assets/images/hol-cart.png" alt="">
+                        <img src="assets/images/hol-cart2.png" alt="">
                     </div>
                     <div class="holiday-cart__img">
                         <img src="assets/images/hol-cart.png" alt="">
@@ -237,6 +240,78 @@
             </div>
         </div>
     </footer>
+    <div class="slider__popup">
+        <div class="slider__popup__container">
+            <a class="close__slider" href="">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="80" y="80" width="80" height="80" rx="40" transform="rotate(-180 80 80)" fill="#FA34A8" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M48.9831 30.3311C48.5417 29.8896 47.8259 29.8896 47.3844 30.3311L39.6571 38.0584L31.9298 30.3311C31.4884 29.8897 30.7726 29.8897 30.3311 30.3311C29.8896 30.7726 29.8896 31.4884 30.3311 31.9299L38.0584 39.6571L30.3313 47.3842C29.8898 47.8257 29.8898 48.5415 30.3313 48.983C30.7728 49.4244 31.4885 49.4244 31.93 48.983L39.6571 41.2559L47.3842 48.983C47.8257 49.4245 48.5415 49.4245 48.983 48.983C49.4244 48.5415 49.4244 47.8257 48.983 47.3843L41.2558 39.6571L48.9831 31.9298C49.4246 31.4884 49.4246 30.7726 48.9831 30.3311Z"
+                        fill="white" />
+                </svg>
+            </a>
+            <div class="main__slider">
+                <div class="your-class">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart2.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                </div>
+            </div>
+            <div class="nav__slider">
+                <div class="your-class2">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart2.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                    <img src="assets/images/hol-cart.png" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            $('.your-class').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                variableWidth: true,
+                asNavFor: '.your-class2',
+                prevArrow: '<button class="slick-prev" aria-label="Previous" type="button"><img src="assets/images/left.png" alt="Previous"></button>',
+                nextArrow: '<button class="slick-next" aria-label="Next" type="button"><img src="assets/images/right.png" alt="Next"></button>',
+            });
+
+            $('.your-class2').slick({
+                slidesToShow: 9,
+                slidesToScroll: 1,
+                asNavFor: '.your-class',
+                dots: false,
+                arrows: false,
+                focusOnSelect: true,
+                variableWidth: true,
+            });
+
+            $('.holiday-cart__img img').on('click', function () {
+                var index = $(this).closest('.holiday-cart__img').index();
+                $('.your-class').slick('slickGoTo', index);
+                $('.your-class2').slick('slickGoTo', index);
+                $('.slider__popup').css('display', 'flex');
+            });
+            $('.close__slider').on('click', function (e) {
+                e.preventDefault();
+                $('.slider__popup').css('display', 'none');
+            });
+        });
+    </script>
 </body>
 
 </html>

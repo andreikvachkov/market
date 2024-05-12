@@ -2514,6 +2514,7 @@ footer .map {
     height: 100%;
     /* object-fit: cover; */
     border-radius: 1.25rem;
+    cursor: pointer;
 }
 .holiday-cart__more {
     padding-top: 1.25rem;
@@ -3128,7 +3129,205 @@ footer .map {
     .vac .accordeon .accordeon__content {
         padding: 1.25rem;
     }
-    .duties__content, .requirements__content {
+    .duties__content,
+    .requirements__content {
         font-size: 0.88rem;
+    }
+}
+
+.slider__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(24, 8, 41, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 333;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.slider__popup__container {
+    width: 80rem;
+    height: 53.75rem;
+    position: relative;
+}
+.main__slider {
+    width: 80rem;
+    height: 46.88rem;
+    position: relative;
+}
+.nav__slider {
+    width: 80rem;
+    height: 6.25rem;
+    padding-top: 0.625rem;
+}
+.main__slider .slick-slide {
+    width: 80rem;
+    height: 46.88rem;
+    border-radius: 1.25rem;
+}
+.nav__slider .slick-slide {
+    border-radius: 0.62rem;
+    width: 8.12rem;
+    height: 6.25rem;
+}
+.slick-prev {
+    position: absolute;
+    z-index: 444;
+    top: 50%;
+    left: 2.5rem;
+    transform: translateY(-50%);
+}
+.slick-prev img,
+.slick-next img {
+    width: 5rem;
+    height: auto;
+}
+.slick-next {
+    position: absolute;
+    z-index: 444;
+    top: 50%;
+    right: 2.5rem;
+    transform: translateY(-50%);
+}
+.slick-list {
+    padding: 0 !important;
+}
+.nav__slider .slick-slide {
+    margin-right: 0.625rem;
+}
+.close__slider {
+    position: absolute;
+    right: 2.5rem;
+    top: 2.5rem;
+    z-index: 444;
+}
+.close__slider svg {
+    width: 5rem;
+    height: auto;
+}
+@media (max-width: 768px) {
+    .slider__popup__container {
+        width: 44rem;
+        height: 31.38rem;
+        position: relative;
+    }
+    .main__slider {
+        width: 44rem;
+        height: 25rem;
+        position: relative;
+    }
+    .nav__slider {
+        width: 44rem;
+        height: 5rem;
+        padding-top: 1.375rem;
+    }
+    .main__slider .slick-slide {
+        width: 44rem;
+        height: 25rem;
+        border-radius: 1.25rem;
+    }
+    .nav__slider .slick-slide {
+        border-radius: 0.62rem;
+        width: 6.25rem;
+        height: 5rem;
+    }
+    .slick-prev {
+        position: absolute;
+        z-index: 444;
+        top: 50%;
+        left: 1.25rem;
+        transform: translateY(-50%);
+    }
+    .slick-prev img,
+    .slick-next img {
+        width: 5rem;
+        height: auto;
+    }
+    .slick-next {
+        position: absolute;
+        z-index: 444;
+        top: 50%;
+        right: 1.25rem;
+        transform: translateY(-50%);
+    }
+    .slick-list {
+        padding: 0 !important;
+    }
+    .nav__slider .slick-slide {
+        margin-right: 0.625rem;
+    }
+    .close__slider {
+        position: absolute;
+        right: 1.25rem;
+        top: 1.25rem;
+        z-index: 444;
+    }
+    .close__slider svg {
+        width: 5rem;
+        height: auto;
+    }
+}
+@media (max-width: 425px) {
+    .slider__popup__container {
+        width: 20.94rem;
+        height: 18.75rem;
+        position: relative;
+    }
+    .main__slider {
+        width: 20.94rem;
+        height: 15.62rem;
+        position: relative;
+    }
+    .nav__slider {
+        width: 20.94rem;
+        height: 2.5rem;
+        padding-top: 0.625rem;
+    }
+    .main__slider .slick-slide {
+        width: 20.94rem;
+        height: 15.62rem;
+        border-radius: 1.25rem;
+    }
+    .nav__slider .slick-slide {
+        border-radius: 0.62rem;
+        width: 3.75rem;
+        height: 2.5rem;
+    }
+    .slick-prev {
+        position: absolute;
+        z-index: 444;
+        top: 50%;
+        left: 1.25rem;
+        transform: translateY(-50%);
+    }
+    .slick-prev img,
+    .slick-next img {
+        width: 2.5rem;
+        height: auto;
+    }
+    .slick-next {
+        position: absolute;
+        z-index: 444;
+        top: 50%;
+        right: 1.25rem;
+        transform: translateY(-50%);
+    }
+    .slick-list {
+        padding: 0 !important;
+    }
+    .nav__slider .slick-slide {
+        margin-right: 0.3125rem;
+    }
+    .close__slider {
+        position: absolute;
+        right: 1.25rem;
+        top: 1.25rem;
+        z-index: 444;
+    }
+    .close__slider svg {
+        width: 2.5rem;
+        height: auto;
     }
 }
